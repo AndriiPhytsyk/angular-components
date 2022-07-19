@@ -1,0 +1,41 @@
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <button footer (click)="callSnackbar()">Call Snackbar</button>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Local Storage'"
+  [subTitle]="'Service'">
+  <div body>
+    {{ state | json }}
+  </div>
+
+  <div footer>
+    <button (click)="updateState()">Update State</button>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'User'"
+  [subTitle]="'Service'">
+  <div body>
+    <p>{{ user | json }}</p>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Param Example'"
+  [subTitle]="'Service'">
+  <div body>
+    {{ userIdExample | json }}
+  </div>
+
+  <div footer>
+    <button routerLink="/services/3">Go to Route ID 3</button>
+  </div>
+</app-card>

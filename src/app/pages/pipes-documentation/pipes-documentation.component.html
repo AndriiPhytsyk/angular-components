@@ -1,0 +1,72 @@
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <p body>{{ text | truncate: 100 }}</p>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <p body>{{ '1111222233334444' | creditCardFormatter }}</p>
+  <p body>{{ '11112222333344445555' | creditCardFormatter }}</p>
+  <p body>{{ '111122223333444a' | creditCardFormatter }}</p>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <p body>{{ flattenData | flatten }}</p>
+  <p footer>
+    <button (click)="modifyFlatten()">Modify Array</button>
+    <button (click)="reassignFlatten()">Reasign Array</button>
+  </p>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <p body>{{ ['Hello', 'World', 'Hello World'] | appFilterTerm: 'hello' }}</p>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Rich Text'"
+  [subTitle]="'Pipes'">
+  <div body>
+    <div [innerHtml]="html | richText"></div>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Sort By'"
+  [subTitle]="'Pipes'">
+  <div body>
+    <h5>String Ascending</h5>
+    <p>{{ stringArray | sortBy }}</p>
+
+    <h5>String Descending</h5>
+    <p>{{ stringArray | sortBy: false }}</p>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Sort By Key'"
+  [subTitle]="'Pipes'">
+  <div body>
+    <h5>String Ascending</h5>
+    <p *ngFor="let obj of objectArray | sortByKey: 'content'">
+      {{ obj.content }}
+    </p>
+
+    <h5>String Descending</h5>
+    <p *ngFor="let obj of objectArray | sortByKey: 'content':false">
+      {{ obj.content }}
+    </p>
+  </div>
+</app-card>

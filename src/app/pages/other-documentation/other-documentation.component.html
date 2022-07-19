@@ -1,0 +1,27 @@
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <div body>
+    <h3 [@fadeInOutAnimation] *ngIf="isOn">Hello</h3>
+    <h3 [@fadeInOutAnimation] *ngIf="!isOn">World</h3>
+  </div>
+  <button footer (click)="toggleAnimation()">Toggle animation</button>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Form Dirty Guard'"
+  [subTitle]="'Other - Guard'">
+  <div body>
+    <form class="email-form" [formGroup]="form" (ngSubmit)="submit()">
+      <div>
+        <div class="name">
+          <input type="text" placeholder="Your Name" formControlName="name" />
+        </div>
+      </div>
+
+      <button>Submit</button>
+    </form>
+  </div>
+</app-card>

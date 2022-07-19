@@ -1,0 +1,14 @@
+<app-debounce-search
+  (searchUpdate)="updateSearchTerm($event)"
+  [searchTerm]="searchTerm">
+</app-debounce-search>
+
+<div class="search-items-container" *ngIf="searchTerm && !hasBeenSelected">
+  <ul class="search-items">
+    <li
+      *ngFor="let item of items | appFilterTerm: searchTerm"
+      (click)="selectValue(item)">
+      {{ item }}
+    </li>
+  </ul>
+</div>

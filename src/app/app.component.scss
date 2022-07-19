@@ -1,0 +1,22 @@
+main {
+  padding: 20px;
+}
+
+@mixin active {
+}
+
+ul {
+  li {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #72cc00;
+    }
+
+    &.active {
+      background-color: #72cc00;
+    }
+  }
+}

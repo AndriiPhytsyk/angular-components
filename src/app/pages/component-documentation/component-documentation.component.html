@@ -1,0 +1,413 @@
+<app-banner-cut-out [title]="'Components'"></app-banner-cut-out>
+<hr />
+
+<app-card
+  draggable="true"
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <p body>
+    Accusantium adipisci dignissimos doloribus eaque facere fugiat fugit illum
+    maiores, nesciunt recusandae repellendus rerum saepe sint? Aliquam
+    aspernatur et quia sint? A assumenda autem consequatur cumque deserunt dicta
+    dolorum earum esse eveniet explicabo facere fugiat fugit ipsam ipsum maiores
+    minima neque nulla numquam odio placeat, provident quia quibusdam reiciendis
+    rerum similique soluta sunt, voluptatibus.
+  </p>
+  <p footer>Footer Content</p>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-accordion body [items]="accordionItems"></app-accordion>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-progress-bar body [value]="progressValue"></app-progress-bar>
+  <button footer (click)="progressValue = 75">Update</button>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-star-rating body [rating]="3.7"></app-star-rating>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Loader'">
+  <app-loader [loaderType]="loaderType" body></app-loader>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-credit-cart-input
+    [creditCardNumber]="'4111222233334444'"
+    [isReadonly]="false"
+    body></app-credit-cart-input>
+  <br />
+  <app-credit-cart-input
+    [creditCardNumber]="'3111222233334444'"
+    [isReadonly]="true"
+    body></app-credit-cart-input>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-twitter-post body></app-twitter-post>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-linkedin-post body></app-linkedin-post>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-modal
+    #modal
+    body
+    [title]="'Example modal'"
+    [imgUrl]="'https://www.pngmart.com/files/13/Bugs-Bunny-Background-PNG.png'">
+    <p>Some content</p>
+  </app-modal>
+  <button footer (click)="modal.open()">Open Modal</button>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-quote
+    [quote]="'Get Good. Get Great. Get Better'"
+    [author]="'Andrii Fytsyk'"
+    [occupation]="'Frontend Developer'"
+    body></app-quote>
+</app-card>
+
+<app-card
+  [formGroup]="form"
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-toggle formControlName="toggle" [isOn]="toggleValue" body></app-toggle>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <div body>
+    <div>
+      <h3>Good Example</h3>
+      <app-rich-text-viewer [innerText]="'<p>Hello World</p>'">
+      </app-rich-text-viewer>
+    </div>
+    <div>
+      <h3>Empty Example</h3>
+      <app-rich-text-viewer [innerText]="'   '"> </app-rich-text-viewer>
+    </div>
+    <div>
+      <h3>Bad Example</h3>
+      <app-rich-text-viewer [innerText]="'<p>Hello World'">
+      </app-rich-text-viewer>
+    </div>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-debounce-search (searchUpdate)="searchUpdate($event)" body>
+  </app-debounce-search>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-search-list
+    body
+    [items]="['Ukraine', 'Brazil', 'Argentina']"></app-search-list>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-counter [min]="0" [max]="10" body></app-counter>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-simple-table body [tableData]="tableData"></app-simple-table>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-paging [totalItems]="200" body></app-paging>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <app-tab
+    [selectedIndex]="tabSelectedIndex"
+    (selectedChange)="tabSelectedIndex = $event"
+    [tabsItems]="tabsItems"
+    body>
+    <h1 [@slideRightAnimation] *ngIf="tabSelectedIndex === 0">
+      Tab 1 content example
+    </h1>
+    <h1 [@slideRightAnimation] *ngIf="tabSelectedIndex === 1">
+      Tab 2 content example
+    </h1>
+  </app-tab>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <button style="margin-right: 10px" body class="btn" appRipple="ripple">
+    Ripple button 1
+  </button>
+  <button body class="btn" appRipple="ripple2">Ripple button 2</button>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Sort Table'"
+  [subTitle]="'Components'">
+  <app-sort-table body></app-sort-table>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Sort Table'"
+  [subTitle]="'Components'">
+  <app-email-form body></app-email-form>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Ribbon'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-ribbon
+      [content]="'Beta Course'"
+      [location]="ribbonStyle.location"
+      [type]="ribbonStyle.type"></app-ribbon>
+
+    <button (click)="changeRibbonStyle('location', RibbonLocation.TopRight)">
+      Top-Right
+    </button>
+    <button (click)="changeRibbonStyle('location', RibbonLocation.TopLeft)">
+      Top-Left
+    </button>
+    <button (click)="changeRibbonStyle('location', RibbonLocation.BottomRight)">
+      Bottom-Right
+    </button>
+    <button (click)="changeRibbonStyle('location', RibbonLocation.BottomLeft)">
+      Bottom-Left
+    </button>
+    <button (click)="changeRibbonStyle('type', RibbonType.Info)">Info</button>
+    <button (click)="changeRibbonStyle('type', RibbonType.Error)">Error</button>
+    <button (click)="changeRibbonStyle('type', RibbonType.Success)">
+      Success
+    </button>
+    <button (click)="changeRibbonStyle('type', RibbonType.Warning)">
+      Warning
+    </button>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Button Toggle'"
+  [subTitle]="'Components'">
+  <app-button-toggle
+    body
+    [options]="buttonToggleOptions"
+    (selection)="selectionChange($event)"
+    [multipleSelection]="multipleSelection"></app-button-toggle>
+  <div footer>
+    <button class="btn" (click)="toggleMultipleSelection(false)">
+      Single Selection
+    </button>
+    <button class="btn" (click)="toggleMultipleSelection(true)">
+      Multiple selection
+    </button>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Button Toggle'"
+  [subTitle]="'Components'">
+  <app-snackbar body [message]="'Snackbar example'" #snackbar></app-snackbar>
+  <button footer (click)="snackbar.show()">Show Snackbar</button>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Simple Popup'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-simple-popup [message]="'Simple Popup Component'">
+      <h1>Hello World</h1>
+    </app-simple-popup>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Countdown Timer'"
+  [subTitle]="'Components'">
+  <app-countdown-timer
+    body
+    [time]="'Jan 25, 2023 11:33:44'"></app-countdown-timer>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Footer'"
+  [subTitle]="'Components'">
+  <app-footer body></app-footer>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Skeleton Loader'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-skeleton-loader *ngIf="!loaded"> </app-skeleton-loader>
+    <p *ngIf="loaded">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos ad sequi
+      doloremque harum illum deserunt delectus assumenda et enim adipisci. Rem
+      deserunt nisi inventore cupiditate repudiandae, nesciunt aspernatur non
+      nostrum.
+    </p>
+  </div>
+
+  <button footer (click)="loaded = !loaded">Toggle</button>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Social Media Bar'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-social-media-bar [socialMedia]="socialMedia"></app-social-media-bar>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Bottom Sheet'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-bottom-sheet #bottomSheet>
+      <h1 (click)="bottomSheet.hide()">Hello</h1>
+      <h1 (click)="bottomSheet.hide()">World</h1>
+    </app-bottom-sheet>
+
+    <div class="footer" footer>
+      <button (click)="bottomSheet.show()">Show</button>
+    </div>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Fieldset'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-fieldset-toggle [legend]="'Address'">
+      <app-email-form></app-email-form>
+    </app-fieldset-toggle>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Pill'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-pill
+      [type]="PillType.Error"
+      [iconClasses]="'fas fa-tag'"
+      [label]="'Error'"></app-pill>
+    <app-pill
+      [type]="PillType.Info"
+      [iconClasses]="'fas fa-tag'"
+      [label]="'Info'"></app-pill>
+    <app-pill
+      [type]="PillType.Success"
+      [iconClasses]="'fas fa-tag'"
+      [label]="'Success'"></app-pill>
+    <app-pill [type]="PillType.Warning" [label]="'Warning'"></app-pill>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Pill Filters'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-pill-filters
+      [pills]="['CA', 'FL', 'TN', 'OR', 'WA']"
+      (selected)="selectedPills($event)"></app-pill-filters>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Not Found'"
+  [subTitle]="'Components'">
+  <div body>
+    <a routerLink="404">Go to Unknown Page</a>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Password'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-password></app-password>
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Overlay'"
+  [subTitle]="'Components'">
+  <div body>
+    <app-overlay [isShown]="isShownOverlay"></app-overlay>
+    <button (click)="isShownOverlay = true">Show Overlay</button>
+  </div>
+</app-card>
+
+<app-top-page></app-top-page>

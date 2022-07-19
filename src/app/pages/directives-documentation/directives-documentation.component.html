@@ -1,0 +1,64 @@
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Card'"
+  [subTitle]="'Components'">
+  <button body appDebounce (debounceClick)="log()">Log</button>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Scale'"
+  [subTitle]="'Directives'">
+  <div
+    body
+    appScale
+    style="
+      width: 100px;
+      height: 100px;
+      background-color: #007acc;
+      margin-left: auto;
+      margin-right: auto;
+    "></div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Copy'"
+  [subTitle]="'Directives'">
+  <button
+    body
+    appCopy="Directive Copy Example"
+    style="border: 1px solid black; text-align: center; padding: 10px">
+    Copy
+  </button>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Lazy Load Image'"
+  [subTitle]="'Directives'">
+  <div body>
+    <img
+      appLazyLoadImage
+      width="500px"
+      src="https://images.unsplash.com/photo-1575747048196-15de2b891ec3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
+      alt="" />
+  </div>
+</app-card>
+
+<app-card
+  [iconClasses]="'fas fa-info-circle'"
+  [title]="'Auto Focus'"
+  [subTitle]="'Directives'">
+  <div body>
+    <app-modal #modal>
+      <div *ngIf="!modal.isHidden">
+        <input type="text" appAutoFocus />
+      </div>
+    </app-modal>
+  </div>
+
+  <div footer class="footer">
+    <button (click)="modal.open()">Call Modal</button>
+  </div>
+</app-card>

@@ -1,14 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { TitleService } from './services/title.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'angular-components';
-
-  ngOnInit(): void {
-    let user = 'frv';
-  }
+export class AppComponent {
+  constructor(public titleService: TitleService) {}
 }
