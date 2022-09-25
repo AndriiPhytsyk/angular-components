@@ -18,6 +18,14 @@ const routes: Routes = [
       ).then(m => m.ServicesDocumentationModule)
   },
   {
+    path: 'rxjs',
+    data: { title: 'Rxjs' },
+    loadChildren: () =>
+      import('./pages/rxjs-documentation/rxjs-documentation.module').then(
+        m => m.RxjsDocumentationModule
+      )
+  },
+  {
     path: 'js',
     data: { title: 'Javascript' },
     loadChildren: () =>
@@ -48,6 +56,12 @@ const routes: Routes = [
       import('./pages/other-documentation/other-documentation.module').then(
         m => m.OtherDocumentationModule
       )
+  },
+  {
+    path: 'demo',
+    data: { title: 'Demo' },
+    loadChildren: () =>
+      import('./pages/demo/demo.module').then(m => m.DemoModule)
   },
   { path: '**', component: NotFoundComponent }
 ];

@@ -4,6 +4,8 @@
 @import './styles/buttons';
 @import url('https://fonts.googleapis.com/css?family=Monserrat|Raleway&display=swap');
 @import '@fortawesome/fontawesome-free/css/all.css';
+@import './styles/demo/main';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
 
 * {
   scroll-behavior: smooth;
@@ -67,4 +69,14 @@ textarea {
     background-size: 100%;
     transition: background 0s;
   }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }

@@ -62,6 +62,23 @@ import { SortByKeyPipe } from './pipes/sort-by-key.pipe';
 import { OverlayComponent } from './components/overlay/overlay.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AutoFocusDirective } from './directives/auto-focus.directive';
+import { NotificationModule } from './pages/demo/services';
+import {
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+  MatDateFormats,
+  MatNativeDateModule
+} from '@angular/material/core';
+
+const APP_DATE_FORMATS: MatDateFormats = {
+  parse: { dateInput: 'DD/MM/YYYY' },
+  display: {
+    dateInput: { day: 'numeric', month: 'short', year: 'numeric' },
+    monthYearLabel: { year: 'numeric', month: 'long' },
+    dateA11yLabel: { year: 'numeric', month: 'long', day: 'numeric' },
+    monthYearA11yLabel: { year: 'numeric', month: 'long' }
+  }
+};
 
 @NgModule({
   declarations: [
@@ -129,9 +146,14 @@ import { AutoFocusDirective } from './directives/auto-focus.directive';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NotificationModule.forRoot(),
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+    { provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

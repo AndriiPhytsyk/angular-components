@@ -1,0 +1,104 @@
+<h2>Actions</h2>
+<app-button (click)="onToggleSpinner()"> Toggle Spinner </app-button>
+
+<app-button (click)="onError()"> Error </app-button>
+<app-button (click)="onSuccess()"> Success </app-button>
+
+<div class="wrapper">
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+  <h2>Form</h2>
+  <form
+    [formGroup]="form"
+    novalidate
+    autocomplete="off"
+    (ngSubmit)="onSubmit()">
+    <app-button (click)="onPatchValue()"> Patch Values </app-button>
+
+    <app-button (click)="toggleInline()"> Toggle Inline </app-button>
+    <app-button (click)="toggleDisable()"> Toggle Disable </app-button>
+
+    <app-button (click)="onSubmit()"> Submit </app-button>
+    <br /><br /><br />
+    <app-form-field
+      [patternError]="regexErrors.email"
+      label="Input"
+      [required]="true"
+      [control]="form.controls['input']"
+      [isInline]="isInline">
+      <app-input formControlName="input"></app-input>
+    </app-form-field>
+    <app-form-field
+      [patternError]="regexErrors.password"
+      label="Password"
+      [required]="true"
+      [control]="form.controls['password']"
+      [isInline]="isInline">
+      <app-password formControlName="password"></app-password>
+    </app-form-field>
+
+    <app-form-field
+      label="Select"
+      [required]="true"
+      [control]="form.controls['select']"
+      [isInline]="isInline">
+      <app-select [items]="items" formControlName="select"></app-select>
+    </app-form-field>
+
+    <app-form-field
+      label="Autocomplete"
+      [required]="true"
+      [control]="form.controls['autocomplete']"
+      [isInline]="isInline">
+      <app-autocomplete
+        [items]="items"
+        formControlName="autocomplete"></app-autocomplete>
+    </app-form-field>
+
+    <app-form-field
+      label="Checkboxes"
+      [required]="true"
+      [control]="form.controls['checkboxes']"
+      [isInline]="isInline">
+      <app-checkboxes
+        (changed)="changed($event)"
+        formControlName="checkboxes"
+        [items]="items"></app-checkboxes>
+    </app-form-field>
+
+    <app-form-field
+      label="Radios"
+      [required]="true"
+      [control]="form.controls['radios']"
+      [isInline]="isInline">
+      <app-radios
+        (changed)="changed($event)"
+        formControlName="radios"
+        [items]="items"></app-radios>
+    </app-form-field>
+
+    <app-form-field
+      label="Date"
+      [required]="true"
+      [control]="form.controls['date']"
+      [isInline]="isInline">
+      <app-datepicker
+        (changed)="changed($event)"
+        formControlName="date"></app-datepicker>
+    </app-form-field>
+
+    <app-form-field
+      label="Date"
+      [required]="true"
+      [control]="form.controls['dateRange']"
+      [isInline]="isInline">
+      <app-datepicker-range
+        (changed)="changed($event)"
+        formControlName="dateRange"></app-datepicker-range>
+    </app-form-field>
+  </form>
+</div>
+
+<!--<code>-->
+<!--  {{form.value | json}}-->
+
+<!--</code>-->
