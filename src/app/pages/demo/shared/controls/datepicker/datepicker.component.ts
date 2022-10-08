@@ -3,7 +3,6 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  OnInit,
   Output
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -21,7 +20,7 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
     }
   ]
 })
-export class DatepickerComponent implements OnInit, ControlValueAccessor {
+export class DatepickerComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Input() max!: Date | null;
   @Input() min!: Date | null;
@@ -33,8 +32,6 @@ export class DatepickerComponent implements OnInit, ControlValueAccessor {
   value!: any;
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   get inputValue(): Date | null {
     return this.value ? new Date(this.value) : null;

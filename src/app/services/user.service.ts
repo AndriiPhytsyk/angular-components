@@ -11,9 +11,10 @@ export class UserService implements AUserService {
 
   constructor(public http: HttpClient) {}
 
-  public getUserById(id: number): Observable<User> {
+  public getUserById(id: number = 1): Observable<User> {
     return this.http
       .get(`${this.baseRoute}/${id}`)
+
       .pipe(map(value => new User(value)));
   }
 }

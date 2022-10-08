@@ -15,6 +15,7 @@ export class ServicesDocumentationComponent implements OnInit {
   public state: { [key: string]: any } = {};
   public user = new User();
   public userIdExample = new User();
+
   constructor(
     private snackbarService: SnackbarService,
     private localStorageService: LocalStorageService,
@@ -30,6 +31,7 @@ export class ServicesDocumentationComponent implements OnInit {
       )
       .subscribe({
         next: value => {
+          console.log(value.email);
           this.userIdExample = value;
         }
       });
