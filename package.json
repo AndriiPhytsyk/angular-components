@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --configuration production",
+    "deploy": "ng deploy --base-href=/angular-components/",
     "test:coverage": "ng test --codeCoverage",
     "prepare": "husky install client/.husky",
     "lint": "ng lint"
