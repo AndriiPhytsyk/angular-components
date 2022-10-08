@@ -14,6 +14,7 @@ import { PillType } from '../../components/pill/pill-type.enum';
 type RibbonStyle = {
   [key: string]: string;
 };
+
 @Component({
   selector: 'app-component-documentation',
   templateUrl: './component-documentation.component.html',
@@ -86,7 +87,7 @@ export class ComponentDocumentationComponent implements OnInit {
   public RibbonLocation = RibbonLocation;
   public ribbonStyle: RibbonStyle = {
     type: RibbonType.Info,
-    location: RibbonLocation.TopRight as string
+    location: RibbonLocation.TopLeft as string
   };
 
   public buttonToggleOptions: ButtonMeta[] = [
@@ -106,6 +107,7 @@ export class ComponentDocumentationComponent implements OnInit {
 
     this.form.valueChanges.subscribe(value => console.log(value));
   }
+
   searchUpdate(e: string) {
     console.log(e);
   }

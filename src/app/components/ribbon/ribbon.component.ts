@@ -9,6 +9,6 @@ import { RibbonLocation } from './ribbon-location.enum';
 })
 export class RibbonComponent {
   @Input() public content = '';
-  @Input() public location = RibbonLocation.TopRight as string;
+  @Input() public location = RibbonLocation.TopLeft as string;
   @Input() public type = RibbonType.Info as string;
 }

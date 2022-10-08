@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class BannerCutOutComponent {
   @Input() public imageUrl = 'assets/component-banner.jfif';
-  @Input() public title = '100 Angular Challenge';
+  @Input() public title = ' 100 Angular Challenge';
 }

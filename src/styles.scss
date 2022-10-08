@@ -1,15 +1,15 @@
+@import '~@angular/material/prebuilt-themes/purple-green.css';
 @import './styles/colors';
 @import './styles/variables';
 @import './styles/mixins';
 @import './styles/buttons';
+@import './styles/utils';
 @import url('https://fonts.googleapis.com/css?family=Monserrat|Raleway&display=swap');
 @import '@fortawesome/fontawesome-free/css/all.css';
 @import './styles/demo/main';
-@import '~@angular/material/prebuilt-themes/purple-green.css';
 
 * {
   scroll-behavior: smooth;
-
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -80,4 +80,8 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.mat-datepicker-toggle {
+  color: gray;
 }
