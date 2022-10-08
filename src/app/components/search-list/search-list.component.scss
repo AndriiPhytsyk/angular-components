@@ -1,13 +1,17 @@
-@import 'styles';
+//@import 'styles';
+@import '../../../styles/colors';
+@import '../../../styles/mixins';
 
 .search-items-container {
   position: relative;
   background-color: white;
+
   li {
     transition: all 0.3s;
     list-style: none;
     padding: 10px;
     @include box-shadow();
+
     &:hover {
       background-color: $blue;
       color: white;
