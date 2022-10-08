@@ -3,7 +3,6 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  OnInit,
   Output
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -22,7 +21,7 @@ type PasswordType = 'text' | 'password';
     }
   ]
 })
-export class PasswordComponent implements OnInit, ControlValueAccessor {
+export class PasswordComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Output() changed = new EventEmitter<string>();
   passwordType: PasswordType;
@@ -34,8 +33,6 @@ export class PasswordComponent implements OnInit, ControlValueAccessor {
   constructor() {
     this.passwordType = 'password';
   }
-
-  ngOnInit(): void {}
 
   private propagateChange: any = () => {};
   private propagateTouched: any = () => {};
