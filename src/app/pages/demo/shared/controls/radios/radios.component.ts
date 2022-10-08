@@ -3,7 +3,6 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  OnInit,
   Output
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -21,7 +20,7 @@ import { ControlItem, Value } from '../../../models/frontend';
     }
   ]
 })
-export class RadiosComponent implements OnInit, ControlValueAccessor {
+export class RadiosComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Output() changed = new EventEmitter<Value>();
   @Input() items: ControlItem[] = [];
@@ -31,8 +30,6 @@ export class RadiosComponent implements OnInit, ControlValueAccessor {
   value: Value = '';
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   private propagateChange: any = () => {};
   private propagateTouched: any = () => {};

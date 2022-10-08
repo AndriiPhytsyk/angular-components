@@ -3,7 +3,6 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  OnInit,
   Output
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -22,7 +21,7 @@ import { ControlItem } from '../../../models/frontend';
     }
   ]
 })
-export class SelectComponent implements OnInit, ControlValueAccessor {
+export class SelectComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Output() changed = new EventEmitter<string>();
   @Input() items: ControlItem[] = [];
@@ -32,8 +31,6 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   value: string = '';
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   private propagateChange: any = () => {};
   private propagateTouched: any = () => {};
